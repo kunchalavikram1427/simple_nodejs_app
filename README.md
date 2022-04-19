@@ -1,5 +1,14 @@
 # Simple nodejs Application
 
+### About node.js
+```
+https://nodejs.org/en/about/
+```
+
+### Install node.js in AWS EC2
+```
+https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-up-node-on-ec2-instance.html
+```
 ### Build and run locally
 ```
 npm install 
