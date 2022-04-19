@@ -9,6 +9,17 @@ https://nodejs.org/en/about/
 ```
 https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-up-node-on-ec2-instance.html
 ```
+
+### Install node.js in ubuntu
+```
+https://www.geeksforgeeks.org/installation-of-node-js-on-linux/
+```
+```
+sudo apt install -y nodejs npm
+
+```
+
+https://www.geeksforgeeks.org/installation-of-node-js-on-linux/
 ### Build and run locally
 `npm install` command will download all the dependencies that are written in the package.json file in the current directory under `node_modules` folder.
 
