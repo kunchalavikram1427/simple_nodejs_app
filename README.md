@@ -10,13 +10,15 @@ https://nodejs.org/en/about/
 https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-up-node-on-ec2-instance.html
 ```
 
-### Install node.js in ubuntu
+### Install node.js in ubuntu 18
 ```
 https://www.geeksforgeeks.org/installation-of-node-js-on-linux/
 ```
 ```
 sudo apt update -y
 sudo apt install -y nodejs npm
+npm -v
+node -v
 ```
 ### Install docker
 ```
