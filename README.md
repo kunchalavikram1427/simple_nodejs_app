@@ -4,6 +4,7 @@
 ```
 https://nodejs.org/en/about/
 ```
+NPM stores dependencies in two files — package.json and package-lock.json. If you use package.json, the build is not reproducible. When you run npm install the package manager puts the last minor release for not strict dependencies. To fix the dependency tree, we use the package-lock.json file. All versions of packages are strictly specified there.
 
 ### Install node.js in AWS EC2
 ```
