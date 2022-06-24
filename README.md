@@ -11,7 +11,7 @@ NPM stores dependencies in two files — package.json and package-lock.json. If 
 https://docs.aws.amazon.com/sdk-for-javascript/v2/developer-guide/setting-up-node-on-ec2-instance.html
 ```
 
-### Install node.js in ubuntu 18
+### Install node.js in ubuntu 18.04
 ```
 https://www.geeksforgeeks.org/installation-of-node-js-on-linux/
 ```
@@ -25,20 +25,6 @@ node -v
 ```
 https://docs.docker.com/engine/install/ubuntu/
 ```
-```
-sudo apt-get remove -y docker docker-engine docker.io containerd runc
-sudo apt-get update -y
-sudo apt-get install ca-certificates curl gnupg lsb-release
-sudo mkdir -p /etc/apt/keyrings
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
-echo \
-  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
-  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-
-sudo apt-get update -y
-sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
-```
-https://www.geeksforgeeks.org/installation-of-node-js-on-linux/
 
 ### Build and run locally
 `npm install` command will download all the dependencies that are written in the package.json file in the current directory under `node_modules` folder.
@@ -57,6 +43,15 @@ docker run -d --name app -p 8080:8080 node-web-app:1.0
 ```
 ### GitLab CI Basic Template
 ```yaml
+
+# default:
+#     image: node:latest
+
+# cache: 
+#     key: nodemodules
+#     paths:
+#         - node_modules/
+
 stages: 
     - build
     - deploy
@@ -68,9 +63,9 @@ build:
         - apt install -y npm
         - npm -v
         - npm install
-    cache:
+    cache: # job level or put globally
         key: nodemodules
-        path:
+        paths:
             - node_modules/
 
 deploy:
@@ -79,8 +74,9 @@ deploy:
         - apt update -y
         - apt install -y nodejs
         - node -v
+        - node server.js &
     cache:
         key: nodemodules
-        path:
+        paths:
             - node_modules/
 ```
