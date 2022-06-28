@@ -1,4 +1,4 @@
-# Simple nodejs Application
+# Simple Nodejs Application
 
 ### About node.js
 ```
