@@ -51,6 +51,7 @@ docker run -d --name app -p 8080:8080 node-web-app:1.0
 #     key: nodemodules
 #     paths:
 #         - node_modules/
+#         - package-lock.json
 
 stages: 
     - build
